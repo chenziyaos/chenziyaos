@@ -16,6 +16,7 @@
 ## 个人兴趣
 
 - LLM 推理引擎：vLLM、SGLang、llama.cpp
+- GPU 性能与集群：CUDA、NCCL、RDMA
 - agent 工具与上下文工程
 
 ## 现在在维护的仓库
@@ -23,9 +24,10 @@
 | 仓库 | 它做什么 | 在哪能跑 |
 |---|---|---|
 | [**weft**](https://github.com/chenziyaos/weft) | 无限画布上的对话：每次问答是一个节点，节点之间的连线就是下一轮的上下文，剪断一根线，下一轮就读不到那段历史。可以接 Claude Code / Codex 这类终端 agent。[ThoughtDAG](https://github.com/chenxiachan/thoughtdag) 的 fork（MIT） | Node.js ≥ 20，本地 Web 应用 + 一个小代理 |
-| [**zero-to-vllm**](https://github.com/chenziyaos/zero-to-vllm) | 按章拆 vLLM v0.32.0（24 个章节目录）：显存账本、调度与抢占、Paged KV、prefix caching、PD 分离、部署实战，每章带模拟器或实验脚本 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.11 标准库，个别用 numpy）；`gpu_*.py` 要 GPU |
+| [**zero-to-vllm**](https://github.com/chenziyaos/zero-to-vllm) | 按章拆 vLLM v0.32.0（25 个章节目录）：显存账本、调度与抢占、Paged KV、prefix caching、PD 分离、部署实战，每章带模拟器或实验脚本 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.11 标准库，个别用 numpy）；`gpu_*.py` 要 GPU |
 | [**zero-to-sglang**](https://github.com/chenziyaos/zero-to-sglang) | 按章拆 SGLang v0.5.22（23 章）：内存池、RadixAttention、overlap 与 CUDA Graph、HiCache、PD 分离 | 同上，CPU 练习需要 Python ≥ 3.10 + numpy |
-| [**zero-to-llama**](https://github.com/chenziyaos/zero-to-llama) | 按章拆 llama.cpp（21 章）：GGUF/GGML 结构、内存与带宽预测器、量化对照、CPU 调优、投机解码，数字来自一台 4 vCPU / 8 GB 无 GPU 的机器 | Python ≥ 3.9 标准库，不装 `gguf` 包也能读 GGUF |
+| [**zero-to-llama**](https://github.com/chenziyaos/zero-to-llama) | 按章拆 llama.cpp（22 章）：GGUF/GGML 结构、内存与带宽预测器、量化对照、CPU 调优、投机解码，数字来自一台 4 vCPU / 8 GB 无 GPU 的机器 | Python ≥ 3.9 标准库，不装 `gguf` 包也能读 GGUF |
+| [**zero-to-gpu**](https://github.com/chenziyaos/zero-to-gpu) | 按章拆 GPU 优化（24 章，CUDA 13.4）：架构与性能账本、访存与 GEMM、Tensor Core、NVLink / PCIe / RDMA、NCCL、K8s 调度、节点烤机与可靠性、MoE 专家并行 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.10 + numpy）；`*.cu` 和 `gpu_*.py` 要 GPU |
 
 ## 30 秒试一下
 
