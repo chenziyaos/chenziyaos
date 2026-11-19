@@ -16,7 +16,7 @@
 ## 个人兴趣
 
 - LLM 推理引擎：vLLM、SGLang、llama.cpp
-- Agent 工具与上下文工程
+- agent 工具与上下文工程
 
 ## 现在在维护的仓库
 
