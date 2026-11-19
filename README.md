@@ -1,8 +1,21 @@
-### 陈子瑶 · Beijing
+### 陈子瑶 · SRE · Beijing
 
-我在这里放两类东西：**大模型推理引擎的拆解笔记配套代码**（llama.cpp / vLLM / SGLang），和一个**让 agent 上下文可见、可编辑的画布工具**（Weft）。
+我是一名 SRE，日常工作是线上稳定性。最近在系统地学大模型推理引擎，也在写让 agent 帮忙做稳定性分析的工具。
 
-*Companion code for my from-scratch walkthroughs of llama.cpp, vLLM and SGLang, plus Weft, a canvas for editing what an LLM agent reads next.*
+*SRE working on reliability day to day; currently digging into LLM inference engines and agent tooling.*
+
+## 日常在做什么
+
+- **容灾与多活**：设计和执行机房级容灾演练（断网、切流、故障注入），演练结束后写复盘，把问题定级、追根因、跟到整改关闭。
+- **存储高可用治理**：盘点数据库、缓存、KV 存储的副本数和跨机房分布，找出单点和不满足多活要求的实例，推动补副本、调整部署。
+- **稳定性数据**：把「标准要求是多少」和「现网实际是多少」放在一起对比，按区域、按机房拆开看差距，不把不同区域合成一个总数。
+- **让 agent 接手重复的分析**：把取数、对账、写复盘初稿这类重复劳动做成 agent 能调用的工具，人只做判断。[Weft](https://github.com/chenziyaos/weft) 就是在这个过程中做的：长时间的 agent 分析跑偏时，用它看清并剪掉 agent 正在读的过时上下文。
+
+更早几年做的是 DevOps：Docker、Kubernetes、Go、Nginx（下面「不再维护」里的仓库是那时候的）。
+
+## 为什么看 LLM 推理
+
+大模型服务正在变成要保障稳定性的基础设施。显存怎么分、KV 缓存能撑多少并发、调度在什么时候抢占请求、PD 分离之后哪一侧先成为瓶颈，这些问题决定了它能扛多少流量、在哪里出故障。我想在出事之前先把这本账算清楚，所以从源码一章一章拆 vLLM、SGLang 和 llama.cpp，每章配一个能在 CPU 上跑的模拟器，和真实日志对账。
 
 ## 现在在维护的仓库
 
