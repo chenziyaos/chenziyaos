@@ -5,7 +5,7 @@
 <p>我是一名 SRE，日常做线上稳定性。这里的仓库主要用来从零学大模型、按章拆 LLM 推理引擎和 GPU 优化，配套代码在 CPU 上就能跑；另有一个管理 agent 上下文的画布工具 Weft。</p>
 
 <a href="https://github.com/chenziyaos">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2800&pause=900&color=2563EB&center=true&vCenter=true&width=760&lines=SRE+%C2%B7+Reliability+%C2%B7+Disaster+Recovery+Drills;Reading+LLM+inference+engines+from+scratch%3A+vLLM+%C2%B7+SGLang+%C2%B7+llama.cpp;Building+Weft%3A+see%2C+cut+and+rewire+what+the+next+agent+turn+reads" alt="SRE, reliability, LLM inference engines and agent tooling" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2800&pause=900&color=2563EB&center=true&vCenter=true&width=760&lines=SRE+%C2%B7+Reliability+%C2%B7+Disaster+Recovery+Drills;Learning+LLMs+from+zero%3A+math%2C+training%2C+serving%2C+RAG+and+agents;Reading+LLM+inference+engines+from+scratch%3A+vLLM+%C2%B7+SGLang+%C2%B7+llama.cpp;Building+Weft%3A+see%2C+cut+and+rewire+what+the+next+agent+turn+reads" alt="SRE, reliability, learning LLMs from zero, LLM inference engines and agent tooling" />
 </a>
 
 <p>
@@ -83,6 +83,24 @@ Qwen3-8B on 1 x H100 SXM  weight=bf16 kv=bf16 util=0.92
 ```
 
 不想在本地装环境，可以点上面的 Colab 徽章，在浏览器里跑同一章的单元测试和 CPU 命令。
+
+从零学大模型，先算四个代表模型每个词元要占多少 KV 缓存（只用标准库）：
+
+```bash
+git clone https://github.com/chenziyaos/zero-to-llm.git && cd zero-to-llm
+python3 01-matmul/ex07.py
+python3 tools/verify.py 01   # 第 01 篇全部 7 段，和正文输出逐字核对；需要 NumPy
+```
+
+期望输出的开头：
+
+```text
+Qwen3-32B     262144 B/token =  256.0 KiB/token
+Qwen3.8-27B    65536 B/token =   64.0 KiB/token
+DeepSeek-V3    70272 B/token =   68.6 KiB/token
+Kimi K3        27648 B/token =   27.0 KiB/token
+...
+```
 
 想直接用 Weft：
 
