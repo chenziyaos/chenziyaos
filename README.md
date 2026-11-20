@@ -102,7 +102,14 @@ Kimi K3        27648 B/token =   27.0 KiB/token
 ...
 ```
 
-想直接用 Weft：
+想直接用 Weft，装 npm 包就行：
+
+```bash
+npm install -g weft-canvas
+weft serve       # 在 http://localhost:3001 提供画布并打开浏览器
+```
+
+或者从源码跑：
 
 ```bash
 git clone https://github.com/chenziyaos/weft.git && cd weft
@@ -116,7 +123,7 @@ npm run dev      # 终端 2：画布，http://localhost:5173
 - **zero-to-\* 是学习用的配套代码，不是库**。模拟器复现的是引擎主干里的关键账本，结果要和真实日志对账才算数。四个引擎和 GPU 仓库的 README 写了版本基线（具体到 commit），zero-to-llm 写了模型规格的核对日期和运行环境；换了版本，数字可能对不上。
 - **zero-to-llm 后半部分的案例读数是假设读数**。准确率、时延、成本这些案例数字是示意用的，不是实测；能复算的是代码输出和公式推导，正文里都标明了。这个仓库没有 Colab notebook。
 - **Colab notebook 只放 CPU 能跑的命令**。要 GPU、模型文件或运行中服务的命令没有放进去，要自己找机器跑。
-- **Weft 没有发布到 npm**，CLI 要自己 `npm run cli:pack` 打包安装；画布数据存在浏览器 IndexedDB 里。限制和排障见它的 [README](https://github.com/chenziyaos/weft#limitations)。
+- **Weft 的画布数据存在浏览器 IndexedDB 里**，没有同步也没有账号，用「导出备份（.json）」备份；桌面安装包未签名。限制和排障见它的 [README](https://github.com/chenziyaos/weft#limitations)。
 - **2015–2020 的仓库不再维护**：
   - [ngx_stream_upstream_check_module](https://github.com/chenziyaos/ngx_stream_upstream_check_module)：Nginx stream 模块的 TCP 健康检查；
   - [onssh](https://github.com/chenziyaos/onssh)：基于 SSH 的 Web 终端，Python 2.7 + Tornado；
