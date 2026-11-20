@@ -1,35 +1,64 @@
-### 陈子瑶 · SRE · Beijing
+<div align="center">
 
-我是一名 SRE，日常工作是线上稳定性。最近在系统地学大模型推理引擎，也在写让 agent 帮忙做稳定性分析的工具。
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:1E3A8A,50:2563EB,100:06B6D4&amp;height=180&amp;section=header&amp;text=chenziyaos&amp;fontSize=52&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38" width="100%" />
 
-*SRE working on reliability day to day; currently digging into LLM inference engines and agent tooling.*
+<p>我是一名 SRE，日常做线上稳定性。这里的仓库主要用来按章拆 LLM 推理引擎和 GPU 优化，配套代码在 CPU 上就能跑；另有一个管理 agent 上下文的画布工具 Weft。</p>
 
-## 日常在做什么
+<a href="https://github.com/chenziyaos">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2800&pause=900&color=2563EB&center=true&vCenter=true&width=760&lines=SRE+%C2%B7+Reliability+%C2%B7+Disaster+Recovery+Drills;Reading+LLM+inference+engines+from+scratch%3A+vLLM+%C2%B7+SGLang+%C2%B7+llama.cpp;Building+Weft%3A+see%2C+cut+and+rewire+what+the+next+agent+turn+reads" alt="SRE, reliability, LLM inference engines and agent tooling" />
+</a>
 
-- **容灾与多活**：设计和执行机房级容灾演练（断网、切流、故障注入），演练结束后写复盘，把问题定级、追根因、跟到整改关闭。
-- **存储高可用治理**：盘点数据库、缓存、KV 存储的副本数和跨机房分布，找出单点和不满足多活要求的实例，推动补副本、调整部署。
-- **稳定性数据**：把「标准要求是多少」和「现网实际是多少」放在一起对比，按区域、按机房拆开看差距，不把不同区域合成一个总数。
-- **让 agent 接手重复的分析**：把取数、对账、写复盘初稿这类重复劳动做成 agent 能调用的工具，人只做判断。[Weft](https://github.com/chenziyaos/weft) 就是在这个过程中做的：长时间的 agent 分析跑偏时，用它看清并剪掉 agent 正在读的过时上下文。
+<p>
+  <a href="https://chenziyaos.github.io/weft/"><img src="https://img.shields.io/badge/Weft-Live_demo-2563EB?style=for-the-badge&labelColor=1F2937" alt="Weft live demo" /></a>
+  <a href="https://colab.research.google.com/github/chenziyaos/zero-to-vllm/blob/main/colab/02-ledger.ipynb"><img src="https://img.shields.io/badge/zero--to--vllm-Open_in_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white&labelColor=1F2937" alt="Open zero-to-vllm in Colab" /></a>
+</p>
 
-更早几年做的是 DevOps：Docker、Kubernetes、Go、Nginx（下面「不再维护」里的仓库是那时候的）。
+</div>
 
-## 个人兴趣
+## 🪄 About me
 
-- LLM 推理引擎：vLLM、SGLang、llama.cpp
-- GPU 性能与集群：CUDA、NCCL、RDMA
-- agent 工具与上下文工程
+```text
+陈子瑶 · SRE · Beijing
 
-## 现在在维护的仓库
+SRE working on reliability day to day; reading LLM inference engines from scratch
+and building agent tooling on the side.
+```
+
+## ✨ 现在在做的
+
+- **四套「从 0 开始」配套代码**：按章拆 vLLM、SGLang、llama.cpp 和 GPU 优化。每章带一个能在 CPU 上跑的模拟器或实验脚本，配单元测试和一个 Colab notebook；`book/` 里是全文的 Markdown 版。
+- **[Weft](https://github.com/chenziyaos/weft)**：无限画布上的对话，节点之间的连线就是下一轮的上下文。长时间的 agent 分析跑偏时，用它看清并剪掉 agent 正在读的过时上下文。
+- **让 agent 接手重复的稳定性分析**：取数、对账、写复盘初稿做成 agent 能调用的工具，人只做判断。Weft 就是在这件事里做出来的。
+
+## 🧭 日常工作
+
+- **容灾与多活**：设计和执行机房级容灾演练（断网、切流、故障注入）。演练后写复盘，把问题定级、追到根因，跟到整改关闭。
+- **存储高可用治理**：盘点数据库、缓存、KV 存储的副本数和跨机房分布。找出单点和不满足多活要求的实例，推动补副本、调部署。
+- **稳定性数据**：把「标准要求是多少」和「现网实际是多少」放在一起比。按区域、按机房拆开看差距，不把不同区域合成一个总数。
+
+更早几年做 DevOps：Docker、Kubernetes、Go、Nginx。下面「不再维护」里的仓库都是那时写的。
+
+## 🧭 关注方向
+
+**稳定性** · 容灾演练 · 多活与副本治理 · 故障复盘 · 稳定性数据口径
+
+**LLM 推理** · vLLM · SGLang · llama.cpp · KV 缓存与调度 · PD 分离 · Embedding / Rerank 服务
+
+**GPU 与集群** · CUDA · NCCL · RDMA · K8s 调度 · 节点烤机
+
+**agent 工具** · 上下文工程 · Claude Code / Codex 工作流
+
+## 📦 现在在维护的仓库
 
 | 仓库 | 它做什么 | 在哪能跑 |
 |---|---|---|
-| [**weft**](https://github.com/chenziyaos/weft) | 无限画布上的对话：每次问答是一个节点，节点之间的连线就是下一轮的上下文，剪断一根线，下一轮就读不到那段历史。可以接 Claude Code / Codex 这类终端 agent。[ThoughtDAG](https://github.com/chenxiachan/thoughtdag) 的 fork（MIT） | Node.js ≥ 20，本地 Web 应用 + 一个小代理 |
-| [**zero-to-vllm**](https://github.com/chenziyaos/zero-to-vllm) | 按章拆 vLLM v0.32.0（25 个章节目录）：显存账本、调度与抢占、Paged KV、prefix caching、PD 分离、部署实战，每章带模拟器或实验脚本 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.11 标准库，个别用 numpy）；`gpu_*.py` 要 GPU |
-| [**zero-to-sglang**](https://github.com/chenziyaos/zero-to-sglang) | 按章拆 SGLang v0.5.22（23 章）：内存池、RadixAttention、overlap 与 CUDA Graph、HiCache、PD 分离 | 同上，CPU 练习需要 Python ≥ 3.10 + numpy |
-| [**zero-to-llama**](https://github.com/chenziyaos/zero-to-llama) | 按章拆 llama.cpp（22 章）：GGUF/GGML 结构、内存与带宽预测器、量化对照、CPU 调优、投机解码，数字来自一台 4 vCPU / 8 GB 无 GPU 的机器 | Python ≥ 3.9 标准库，不装 `gguf` 包也能读 GGUF |
-| [**zero-to-gpu**](https://github.com/chenziyaos/zero-to-gpu) | 按章拆 GPU 优化（24 章，CUDA 13.4）：架构与性能账本、访存与 GEMM、Tensor Core、NVLink / PCIe / RDMA、NCCL、K8s 调度、节点烤机与可靠性、MoE 专家并行 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.10 + numpy）；`*.cu` 和 `gpu_*.py` 要 GPU |
+| [**zero-to-vllm**](https://github.com/chenziyaos/zero-to-vllm) | 按章拆 vLLM v0.32.0，共 26 章：显存账本、调度与抢占、Paged KV、prefix caching、PD 分离、LoRA、部署实战、Embedding 与 Rerank 服务 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.11）；`gpu_*.py` 和起服脚本要 GPU |
+| [**zero-to-sglang**](https://github.com/chenziyaos/zero-to-sglang) | 按章拆 SGLang v0.5.22，书稿 25 章、配套代码 24 个目录：内存池、RadixAttention、overlap 与 CUDA Graph、HiCache、PD 分离、Embedding 与 Rerank 服务 | CPU 练习需要 Python ≥ 3.10 + numpy |
+| [**zero-to-llama**](https://github.com/chenziyaos/zero-to-llama) | 按章拆 llama.cpp，共 22 章：GGUF/GGML 结构、内存与带宽预测器、量化对照、CPU 调优、投机解码；数字来自一台 4 vCPU / 8 GB、没有 GPU 的机器 | Python ≥ 3.9 标准库，不装 `gguf` 包也能读 GGUF |
+| [**zero-to-gpu**](https://github.com/chenziyaos/zero-to-gpu) | 按章拆 GPU 优化（CUDA 13.4），书稿 33 章、配套代码 24 个目录：性能账本、访存与 GEMM、Tensor Core、NVLink / PCIe / RDMA、NCCL、K8s 调度、可靠性、MoE 专家并行 | `sim_*.py` 在 CPU 上跑（Python ≥ 3.10 + numpy）；`*.cu` 和 `gpu_*.py` 要 GPU |
+| [**Weft**](https://github.com/chenziyaos/weft) | 每次问答是画布上的一个节点，剪断一根连线，下一轮就读不到那段历史；可以接 Claude Code / Codex 这类终端 agent。[ThoughtDAG](https://github.com/chenxiachan/thoughtdag) 的 fork（MIT） | Node.js ≥ 20，本地 Web 应用加一个小代理；也有[在线演示](https://chenziyaos.github.io/weft/) |
 
-## 30 秒试一下
+## ⚡ 30 秒试一下
 
 不需要 GPU，算一张 H100 上跑 Qwen3-8B 时 vLLM 能分到多少 KV 缓存：
 
@@ -49,6 +78,8 @@ Qwen3-8B on 1 x H100 SXM  weight=bf16 kv=bf16 util=0.92
   = KV 可用          55.43 GiB  ← 对照日志 Available KV cache memory
 ```
 
+不想在本地装环境，可以点上面的 Colab 徽章，在浏览器里跑同一章的单元测试和 CPU 命令。
+
 想直接用 Weft：
 
 ```bash
@@ -58,12 +89,17 @@ npm run server   # 终端 1：模型代理，http://localhost:3001
 npm run dev      # 终端 2：画布，http://localhost:5173
 ```
 
-## 使用前要知道的
+## ⚠️ 使用前要知道的
 
-- **zero-to-\* 是学习用的配套代码，不是库**。模拟器复现的是引擎主干里的关键账本，结果要和真实日志对账才算数；每个仓库 README 写了版本基线（具体到 commit），换版本后数字可能对不上。
-- **Weft 没有发布到 npm**，CLI 需要自己 `npm run cli:pack` 打包安装；画布数据存在浏览器 IndexedDB 里。限制和排障见它的 [README](https://github.com/chenziyaos/weft#limitations)。
-- **2015–2020 的仓库不再维护**：[ngx_stream_upstream_check_module](https://github.com/chenziyaos/ngx_stream_upstream_check_module)（Nginx stream 模块的 TCP 健康检查）、[onssh](https://github.com/chenziyaos/onssh)（基于 SSH 的 Web 终端，Python 2.7 + Tornado）、[nginx-devops](https://github.com/chenziyaos/nginx-devops)，以及[旧博客](https://chenziyaos.github.io/)（运维 / Docker / Go 方向的存档）。
+- **zero-to-\* 是学习用的配套代码，不是库**。模拟器复现的是引擎主干里的关键账本，结果要和真实日志对账才算数。每个仓库的 README 写了版本基线（具体到 commit），换了版本数字可能对不上。
+- **Colab notebook 只放 CPU 能跑的命令**。要 GPU、模型文件或运行中服务的命令没有放进去，要自己找机器跑。
+- **Weft 没有发布到 npm**，CLI 要自己 `npm run cli:pack` 打包安装；画布数据存在浏览器 IndexedDB 里。限制和排障见它的 [README](https://github.com/chenziyaos/weft#limitations)。
+- **2015–2020 的仓库不再维护**：
+  - [ngx_stream_upstream_check_module](https://github.com/chenziyaos/ngx_stream_upstream_check_module)：Nginx stream 模块的 TCP 健康检查；
+  - [onssh](https://github.com/chenziyaos/onssh)：基于 SSH 的 Web 终端，Python 2.7 + Tornado；
+  - [nginx-devops](https://github.com/chenziyaos/nginx-devops)；
+  - [旧博客](https://chenziyaos.github.io/)：运维 / Docker / Go 方向的存档。
 
-## 联系
+## 📮 联系
 
 对哪个仓库有问题，直接在那个仓库开 issue。
