@@ -98,7 +98,7 @@ npm run dev      # 终端 2：画布，http://localhost:5173
   - [ngx_stream_upstream_check_module](https://github.com/chenziyaos/ngx_stream_upstream_check_module)：Nginx stream 模块的 TCP 健康检查；
   - [onssh](https://github.com/chenziyaos/onssh)：基于 SSH 的 Web 终端，Python 2.7 + Tornado；
   - [nginx-devops](https://github.com/chenziyaos/nginx-devops)；
-  - [旧博客](https://chenziyaos.github.io/)：运维 / Docker / Go 方向的存档。
+  - [旧博客](https://github.com/chenziyaos/chenziyaos.github.io/tree/archive/hexo-blog-2017)：运维 / Docker / Go 方向的存档，已下线，源文件留在这个分支；[chenziyaos.github.io](https://chenziyaos.github.io/) 现在是项目主页。
 
 ## 📮 联系
 
